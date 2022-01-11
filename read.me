@@ -1,0 +1,156 @@
+Belle Erhardt
+30th April 2021
+Data Structures and Algorithums
+Project 5
+Coded on windows PC, using a virtual machine to use a linux
+----------------------------------------------------------------------------------
+Bugs:
+Does not find correct flight. 
+if it did it can read it in and print them out.
+
+Summery of Construction:
+
+ENGINEERING LOG
++++++++++++++++++
+6:30 am,
+"earliest I have ever coded, but we are getting a good jump on the day. I just created a main and a read.me so far. 
+I am about to go off on paper and draw an outline on how I want to structure this program. My ignitial thought is 
+I think I am going to make a class for flights. So when I read in the file, it will turn it into a graph. At this point I 
+would just need to create a method to find the cheapest flight. Although we will see soon enough."
+4 days later:
+"Ive done less of the read me this round, and this project has brought tears. I tried to have this done by friday but the algorithum for detecting least cost path caused some pain. I drew lots of diagrams but by the time I got the code to work I am now dealing with segmentation fault drop."
+"while coding I caught myself thinking what if and trying to creat the most user friendly reactions but after struggling on the same issue for a while that mindset kinda left the table."
+
+
+in attempt to "clean up" my code, I brought all the code I commented out over here. I feel like I was closer to getting this method to work two days ago but in attempt to fix it I've tried new 
+things since then. 
+all this code came from the graph cpp class.
+		/*flightPrice = check->price();
+		//potentialCost += flightPrice;
+		if(potentialCost<RT)
+			{
+			//if(itinerary.back()->lowerIndex()==i1)
+			//	{itinerary.pop_back();}
+			itinerary.push_back(*check);
+			//RT=potentialCost;
+			connectionCheck(check, RT, i1, check->higherIndex());
+			}
+			check++;
+			}
+		if(potentialCost>RT)
+			{
+			potentialCost-=flightPrice;
+			check++;
+			connectionCheck(check, RT, i1, check->higherIndex());
+			}*/
+
+/**
+ getline(file, fl);
+  file >> sl;
+  file >> fp;
+//check how movie files were if possibe to see if lines below are needed
+  string dummy;
+  getline(file, dummy); 
+
+	Movie filler;
+	if(file)
+	{
+	filler.read(file);
+	_head = new MovieNode(filler);
+	MovieNode* nodePtr = _head;
+	Movie readIn;
+	readIn.read(file);	
+	while(file)
+		{
+		readIn.read(file);
+		nodePtr->next() = new MovieNode(readIn);
+		nodePtr= nodePtr->next();	
+		readIn.read(file);	
+		}
+	}
+}	
+
+Flight temp = new flight(a, b, cost);
+
+//ignore these for now
+//v1: Vector #1
+file >> v1;
+//v2: Vector #2
+file >> v2;
+//cost: value attached to Edge
+file >> cost;
+//Need to figure out how to read these in***************************************
+
+
+
+//set high, low values to store each edged in 1 pair
+//and allowing my algorithum to search less for
+//connecting flights [while still being two way flights]
+if (a < b)
+{
+low = a;
+high = b;
+}
+if (a > b)
+{
+low = b;
+high = a;
+}
+//high/low varibles allows program to store pairs like a matrix
+//high: Y value low: X value, but doesn't search blank values
+
+	layover = itinerary.begin();
+	int height = 0;
+	
+	itinerary.clear();//start with fresh Itinerary****
+	//if at the first spot of the original Index, there are no other possible edges.
+	while(check!= connections[start].end())
+		{ 
+		check = connections[i].begin();
+		//nextConnection: checks next lowest price, adds to potentialCost
+		//potentialCost: accumulation of flight prices for 1 trip
+		int nextConnection = check->price();
+		potentialCost += nextConnection;
+		//if connecting flight path total cost less
+		if ((potentialCost) < RT)
+			{
+			 //update itinerary
+			itinerary.push_back(*check);
+			//check if we made it to destination
+			if (check->higherIndex() == end)
+				{ 
+				
+				RT = potentialCost;
+				check++;
+				potentialCost = 0;
+				}
+			//if not at destination , check connections to from current layover
+			if (check != connections[start].end())
+				{
+				//so I can back step
+				height = distance(check, connections[i].end());
+				lastIndex = check->lowerIndex();
+				i=check->higherIndex();
+				}
+			else if(check == connections[check->higherIndex()].end())
+				{
+				i= lastIndex;
+				for(int h =0; h<height; h++)
+					{
+					check++;
+					}
+				}
+			}
+		//if current trip cost > previous best option
+		if (potentialCost > RT)
+			{
+			itinerary.clear();//start with fresh Itinerary****
+			 //remove last flight price
+			potentialCost -= nextConnection;
+			check++;
+			}
+		}
+	//if comiler makes it here then we have searched through the whole graph
+	
+
+*/
